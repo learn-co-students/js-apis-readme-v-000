@@ -45,6 +45,8 @@ use method to make same requests to github api as with postman
 
 pick another easy API (twitter, foursquare, etc) and make API calls and display the data in the page
 
+GET and POST request - to retrieve user info and then post back to the server - students will need to create accounts in order to use the APIs
+
 ## Resources
 
 
