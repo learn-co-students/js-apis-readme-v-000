@@ -41,6 +41,16 @@ explain what a callback is and how it works. and implications of callbacks
 
 use method to make same requests to github api as with postman
 
+```js
+$.ajax({
+  type: "POST",
+  url: url,
+  data: data,
+  success: success,
+  dataType: dataType
+})
+```
+
 ## Instructions
 
 pick another easy API (twitter, foursquare, etc) and make API calls and display the data in the page
