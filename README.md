@@ -53,9 +53,14 @@ $.ajax({
 
 ## Instructions
 
-pick another easy API (twitter, foursquare, etc) and make API calls and display the data in the page
+have students code along with the examples - tell them what files to copy and paste
 
-GET and POST request - to retrieve user info and then post back to the server - students will need to create accounts in order to use the APIs
+need tests to make sure following along correctly
+
+build methods to return info - like `userRepos()` returns the first 10 repos of a specific user, etc
+
+have a frontend so students can fill out a form and submit it with the submit event and have the JS make the API call and display the information they want
+
 
 ## Resources
 
