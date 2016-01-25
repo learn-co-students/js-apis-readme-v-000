@@ -4,6 +4,8 @@
 + Explain how to make an API request using AJAX
 + Make an API `get` request using AJAX
 + Make an API `post` request using AJAX
++ Parse JSON
++ Explain what JSON is
 
 
 ## Intro
