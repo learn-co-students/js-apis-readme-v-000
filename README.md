@@ -1,29 +1,19 @@
 # APIS
 
 ## Objectives 
-+ 
++ Explain how to make an API request using AJAX
++ Make an API `get` request using AJAX
++ Make an API `post` request using AJAX
+
 
 ## Intro
 
-So far, when you've been using an API, you've been using a gem to access the API endpoints. Basically, you're relying on work someone else did to access clean data in the desired format.
-
-Instead of relying on a gem or library to do the heavy lifting for us, we can use Ajax to do it ourselves
+Now that we've made `get` requests to a website for text, let's do something more interesting with AJAX, let's use it to access an API.
 
 
-## API Basics
+## JSON
 
-
-Underneath the hood of all those gems, a request as been made to the API (to a specific url) and then the app responds to that request with JSON. 
-
-define JSON - show an example of JSON - how to access data in JSON just like arrays and hashes
-
-use postman chrome extension or app?? to make API request to demonstrate getting back JSON and manipulating it (screenshots) from the Github API
-
-theoretical definition of API
-
-## AJAX + jQuery
-
-define ajax and why we use it - stands forAsynchronous JavaScript and XML
+What is JSON, why it's useful, how to access data from JSON ([spotify api](http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest) has nice browser view to practice accessing data - just like nokogiri but actually accessing API and database
 
 `$.getJSON` method - how to structure arguments  and what it returns - how it uses callbacks. makes GET request to API endpoint
 
@@ -42,22 +32,18 @@ explain what a callback is and how it works. and implications of callbacks
 use method to make same requests to github api as with postman
 
 ```js
-$.ajax({
-  type: "POST",
-  url: url,
-  data: data,
-  success: success,
-  dataType: dataType
-})
+ $.getJSON('URL, function(dataFromAPIRequest) {
+  // code block to execute once receive data from api
+});
 ```
 
 ## Instructions
 
-have students code along with the examples - tell them what files to copy and paste
+chose an API like [wikipedia](http://www.programmableweb.com/api/wikipedia) or [tumblr](http://www.programmableweb.com/api/tumblr) (do post and get requests) have students code along with the examples - tell them what files to copy and paste
 
 need tests to make sure following along correctly
 
-build methods to return info - like `userRepos()` returns the first 10 repos of a specific user, etc
+build methods to return clean info from the API
 
 have a frontend so students can fill out a form and submit it with the submit event and have the JS make the API call and display the information they want
 
