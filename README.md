@@ -54,3 +54,5 @@ have a frontend so students can fill out a form and submit it with the submit ev
 
 
 
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme' title='APIS'>APIS</a> on Learn.co and start learning to code for free.</p>
