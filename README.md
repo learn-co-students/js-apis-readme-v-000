@@ -28,7 +28,7 @@ What does JSON even look like? Let's take a look.
 ```
 Similar to how JavaScript objects are defined with `{}`, the same goes for JSON. Inside of the `{}` we have our key/value pairs. The artist name for this chunk of data is **Hozier** and the track name is **Take me to church**. We might even guess this represents a song. Let's put JSON to work with our Ajax requests.
 
-## Getting JSON with Ajax
+## Getting JSON With Ajax
 If we already know that the API we are using responds with JSON, we can use the jQuery function `$.getJSON`. This function performs an Ajax request and parses the response as JSON automatically. This means the callback receives a JavaScript object with the contents of the response data ready for us to use.
 
 This next example shows an Ajax request to the Spotify API for information about a specific song.
@@ -44,7 +44,7 @@ $.getJSON(url, success_callback);
 ```
 We made a request to the API url and in our callback we created an alert dialog with the name of the song we got back. JQuery handled the request plus the parsing the result so all we need to do is to figure out what to do with the data.
 
-## Changing our request with parameters
+## Changing Our Request With Parameters
 At some point, we will need to alter our request in order to change the data we receive. How we do this depends on the API we are calling but there is a good chance we will need to use url parameters. JQuery provides an easy way to do this by passing our parameters as a JavaScript object. Let's us the Spotify API to search for a song. We will specify 3 different criteria, `q` will be the search string, `type` will be the type of the thing we want to find and `limit` will be how many results we want.
 
 ```js
