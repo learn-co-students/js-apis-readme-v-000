@@ -67,7 +67,7 @@ var success_callback = function (searchResultsFromAPIRequest){
 // The second parameter we are passing is the url parameters to use in the request
 $.getJSON(url, url_params, success_callback);
 ```
-The result of the request will be the name of all the songs we found printed to the console. Under the covers, jQuery took our paramters and constructed a url to make the request with.
+The result of the request will be the name of all the songs we found printed to the console. Under the covers, jQuery took our parameters and constructed a url to make the request with.
 
 ```
 https://api.spotify.com/v1/search?qTake+Me+to+Church&type=track&limit10
