@@ -9,7 +9,11 @@
 
 ## Intro
 
-Now that we've made `get` requests to our server for text files, let's do something more interesting with AJAX by using it to access an API. Before we do that, let's talk about JSON.
+Passing data back and forth from our server is easy when that data is
+simple. Once we have to represent complex data it gets hard really quick.
+Think about it, how would you represent a model class in a
+way that both Ruby and JavaScript understand. JSON provides a simple,
+light weight format that will do just that.
 
 ## JSON
 
@@ -19,7 +23,7 @@ JSON stands for JavaScript Object Notation. In a nutshell, it's a way to represe
 
 What does JSON even look like? Let's take a look.
 
-```js
+```javascript
 {
   "artist_name": "Hozier",
   "track_name" : "Take Me to Church",
@@ -33,7 +37,7 @@ If we already know that the API we are using responds with JSON, we can use the 
 
 This next example shows an Ajax request to the Spotify API for information about a specific song.
 
-```js
+```javascript
 var url = 'https://api.spotify.com/v1/tracks/1zHlj4dQ8ZAtrayhuDDmkY';
 var success_callback = function (songFromAPIRequest){
   // The response has already been parsed for us.
@@ -47,7 +51,7 @@ We made a request to the API url and in our callback we created an alert dialog 
 ## Changing Our Request With Parameters
 At some point, we will need to alter our request in order to change the data we receive. How we do this depends on the API we are calling but there is a good chance we will need to use url parameters. jQuery provides an easy way to do this by passing our parameters as a JavaScript object. Let's use the Spotify API to search for a song. We will specify 3 different criteria, `q` will be the search string, `type` will be the type of the thing we want to find and `limit` will be how many results we want.
 
-```js
+```javascript
 var url = 'https://api.spotify.com/v1/search';
 
 // These parameters will be made into url paramters by jQuery
@@ -75,7 +79,7 @@ https://api.spotify.com/v1/search?qTake+Me+to+Church&type=track&limit10
 
 Its also possible to create the url ourselves.
 
-```js
+```javascript
 // Here we manually create a url with all the url parameters
 var url = 'https://api.spotify.com/v1/search?q=Take+Me+to+Church&type=track&limit=10';
 
@@ -92,10 +96,11 @@ $.getJSON(url, success_callback);
 In the end, we get the same results but we have the option to choose our approach based on the situation. One final thing to consider is that our success callback won't actually be called if the JSON that gets return from the API is invalid. We will need to have a error callback to handle these types of problems.
 
 ## Instructions
-You will need to visit https://github.com/settings/tokens and create a personal token to use before we begin. This token allows you to make requests for data related to your account. Once you have this token we can continue.
+Let's write some code together to show how this all works. We will be
+creating a simple markdown parser using the GitHub API.
 
 Copy the following code into `js/api_client.js`.
-```js
+```javascript
 var printStargazers = function(users) {
   $.each(users, function(index, user) {
     console.log(user.login + ' starred the Rails Repository');
@@ -105,7 +110,7 @@ var printStargazers = function(users) {
 
 This function will print an array of users to the console. Next, copy the following code into `js/api_client.js`.
 
-```js
+```javascript
   $.ajax({
     url: 'https://api.github.com/repos/rails/rails/stargazers',
     type: 'POST',
@@ -119,17 +124,18 @@ This code makes a request to the GitHub API for all the users that starred the R
 
 Now let's try a POST request. Copy the following code into `js/api_client.js`. 
 
-```js
+```javascript
   var addHTML = function (html){
     $('#search_results').html(html);
   };
   
   var bindCreateButton = function (){
     $('#convert').click(function(event) {
+      var markdown = $('#markdown').val();
       $.ajax({
         url: 'https://api.github.com/markdown',
         type: 'POST',
-        data: '{ "text": "#Hello world!", "mode": "markdown" }'
+        data: '{ "text": markdown, "mode": "markdown" }'
       }).done(function(response) {
         addHTML(response);
       });
