@@ -23,10 +23,11 @@ function addHTML(html){
 
 function bindCreateButton(){
   $('#convert').click(function(event) {
+    var markdown = $('#markdown').val();
     $.ajax({
       url: 'https://api.github.com/markdown',
       type: 'POST',
-      data: '{ "text": "#Hello world!", "mode": "markdown" }'
+      data: JSON.stringify({ "text": markdown, "mode": "markdown" })
     }).done(function(response) {
       addHTML(response);
     });
