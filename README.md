@@ -3,7 +3,7 @@
 ## Objectives 
 + Explain how to make an API request using AJAX
 + Make an API `get` request using AJAX
-+ Make an API post request using AJAX
++ Make an API `post` request using AJAX
 + Parse JSON
 + Explain what JSON is
 
@@ -46,7 +46,7 @@ var success_callback = function (songFromAPIRequest){
 
 $.getJSON(url, success_callback);
 ```
-We made a request to the API url and in our callback we created an alert dialog with the name of the song we got back. JQuery handled the request plus the parsing the result so all we need to do is to figure out what to do with the data.
+We made a request to the API url and in our callback we created an alert dialog with the name of the song we got back. jQuery handled the request plus the parsing of the result so all we need to do is to figure out what to do with the data.
 
 ## Changing Our Request With Parameters
 At some point, we will need to alter our request in order to change the data we receive. How we do this depends on the API we are calling but there is a good chance we will need to use url parameters. jQuery provides an easy way to do this by passing our parameters as a JavaScript object. Let's use the Spotify API to search for a song. We will specify 3 different criteria, `q` will be the search string, `type` will be the type of the thing we want to find and `limit` will be how many results we want.
