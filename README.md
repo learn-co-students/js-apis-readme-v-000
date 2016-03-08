@@ -1,6 +1,6 @@
 # APIS
 
-## Objectives 
+## Objectives
 + Explain how to make an API request using AJAX
 + Make an API `get` request using AJAX
 + Make an API `post` request using AJAX
@@ -113,22 +113,20 @@ This function will print an array of users to the console. Next, copy the follow
 ```javascript
   $.ajax({
     url: 'https://api.github.com/repos/rails/rails/stargazers',
-    type: 'POST',
-    dataType: 'jsonp'
-  }).done(function(response) {
-    var users = response.data;
+    type: 'GET',
+  }).done(function(users) {
     printStargazers(users);
   });
 ```
-This code makes a request to the GitHub API for all the users that starred the Ruby on Rails repository. Notice the dataType we provided was `jsonp`. This allows us to make requests for JSON to APIs that might not allow it otherwise. The callback calls the `printStargazers` function. Let's try out our code so far. In your terminal run `python -m SimpleHTTPServer`. Browse to http://localhost:8000 and open Chrome developer tools. You should see a number of logs like this `dhh starred the Rails Repository`.
+This code makes a request to the GitHub API for all the users that starred the Ruby on Rails repository. The callback calls the `printStargazers` function. Let's try out our code so far. In your terminal run `python -m SimpleHTTPServer`. Browse to http://localhost:8000 and open Chrome developer tools. You should see a number of logs like this `dhh starred the Rails Repository`.
 
-Now let's try a POST request. Copy the following code into `js/api_client.js`. 
+Now let's try a POST request. Copy the following code into `js/api_client.js`.
 
 ```javascript
   var addHTML = function (html){
     $('#search_results').html(html);
   };
-  
+
   var bindCreateButton = function (){
     $('#convert').click(function(event) {
       var markdown = $('#markdown').val();
@@ -141,7 +139,7 @@ Now let's try a POST request. Copy the following code into `js/api_client.js`.
       });
     });
   };
-  
+
   $(document).ready(function(){
     bindCreateButton();
   });
