@@ -133,7 +133,7 @@ Now let's try a POST request. Copy the following code into `js/api_client.js`.
       $.ajax({
         url: 'https://api.github.com/markdown',
         type: 'POST',
-        data: '{ "text": markdown, "mode": "markdown" }'
+        data: JSON.stringify({ text: markdown, mode: "markdown" })
       }).done(function(response) {
         addHTML(response);
       });
