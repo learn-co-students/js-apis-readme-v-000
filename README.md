@@ -54,7 +54,7 @@ At some point, we will need to alter our request in order to change the data we 
 ```javascript
 var url = 'https://api.spotify.com/v1/search';
 
-// These parameters will be made into url paramters by jQuery
+// These parameters will be made into url parameters by jQuery
 var url_params = {
   q: "Take Me to Church",
   type: "track",
@@ -149,3 +149,5 @@ Here we are sending markdown to the GitHub API to render into HTML. Once we get 
 ## Resources
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme' title='APIS'>APIS</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme'>APIs and JSON </a> on Learn.co and start learning to code for free.</p>
