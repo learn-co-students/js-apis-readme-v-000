@@ -74,7 +74,7 @@ $.getJSON(url, url_params, success_callback);
 The result of the request will be the name of all the songs we found printed to the console. Under the covers, jQuery took our parameters and constructed a url to make the request with.
 
 ```
-https://api.spotify.com/v1/search?qTake+Me+to+Church&type=track&limit10
+https://api.spotify.com/v1/search?q=Take+Me+to+Church&type=track&limit10
 ```
 
 Its also possible to create the url ourselves.
@@ -151,3 +151,5 @@ Here we are sending markdown to the GitHub API to render into HTML. Once we get 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme' title='APIS'>APIS</a> on Learn.co and start learning to code for free.</p>
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme'>APIs and JSON </a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/js-apis-readme'>APIs and JSON </a> on Learn.co and start learning to code for free.</p>
