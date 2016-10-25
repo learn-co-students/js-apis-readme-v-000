@@ -11,6 +11,19 @@ $.ajax({
    printStargazers(users);
  });
 
+// function makeStargazersApiRequest() {
+//   $.ajax({
+//     url: 'https://api.github.com/repos/rails/rails/stargazers',
+//     type: 'POST',
+//     dataType: 'jsonp'
+//   }).done(function(response) {
+//     var users = response.data;
+//     printStargazers(users);
+//   });
+// };
+
+makeStargazersApiRequest();
+
 
  var addHTML = function (html){
     $('#search_results').html(html);
