@@ -99,7 +99,7 @@ In the end, we get the same results but we have the option to choose our approac
 Let's write some code together to show how this all works. We will be
 creating a simple markdown parser using the GitHub API.
 
-Copy the following code into `js/api_client.js`.
+Type the following code into `js/api_client.js`.
 ```javascript
 var printStargazers = function(users) {
   $.each(users, function(index, user) {
@@ -108,7 +108,7 @@ var printStargazers = function(users) {
 };
 ```
 
-This function will print an array of users to the console. Next, copy the following code into `js/api_client.js`.
+This function will print an array of users to the console. Next, type the following code into `js/api_client.js`.
 
 ```javascript
   $.ajax({
@@ -120,7 +120,7 @@ This function will print an array of users to the console. Next, copy the follow
 ```
 This code makes a request to the GitHub API for all the users that starred the Ruby on Rails repository. The callback calls the `printStargazers` function. Let's try out our code so far. In your terminal run `python -m SimpleHTTPServer`. Browse to http://localhost:8000 and open Chrome developer tools. You should see a number of logs like this `dhh starred the Rails Repository`.
 
-Now let's try a POST request. Copy the following code into `js/api_client.js`.
+Now let's try a POST request. Type the following code into `js/api_client.js`.
 
 ```javascript
   var addHTML = function (html){
@@ -151,3 +151,5 @@ Here we are sending markdown to the GitHub API to render into HTML. Once we get 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme' title='APIS'>APIS</a> on Learn.co and start learning to code for free.</p>
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme'>APIs and JSON </a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/js-apis-readme'>APIs and JSON </a> on Learn.co and start learning to code for free.</p>
