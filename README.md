@@ -111,45 +111,39 @@ var printStargazers = function(users) {
 This function will print an array of users to the console. Next, type the following code into `js/api_client.js`.
 
 ```javascript
-  $.ajax({
-    url: 'https://api.github.com/repos/rails/rails/stargazers',
-    type: 'GET',
-  }).done(function(users) {
-    printStargazers(users);
-  });
+$.ajax({
+  url: 'https://api.github.com/repos/rails/rails/stargazers',
+  type: 'GET',
+}).done(function(users) {
+  printStargazers(users);
+});
 ```
 This code makes a request to the GitHub API for all the users that starred the Ruby on Rails repository. The callback calls the `printStargazers` function. Let's try out our code so far. In your terminal run `python -m SimpleHTTPServer`. Browse to http://localhost:8000 and open Chrome developer tools. You should see a number of logs like this `dhh starred the Rails Repository`.
 
 Now let's try a POST request. Type the following code into `js/api_client.js`.
 
 ```javascript
-  var addHTML = function (html){
-    $('#search_results').html(html);
-  };
+var addHTML = function (html){
+  $('#search_results').html(html);
+};
 
-  var bindCreateButton = function (){
-    $('#convert').click(function(event) {
-      var markdown = $('#markdown').val();
-      $.ajax({
-        url: 'https://api.github.com/markdown',
-        type: 'POST',
-        data: JSON.stringify({ text: markdown, mode: "markdown" })
-      }).done(function(response) {
-        addHTML(response);
-      });
+var bindCreateButton = function (){
+  $('#convert').click(function(event) {
+    var markdown = $('#markdown').val();
+    $.ajax({
+      url: 'https://api.github.com/markdown',
+      type: 'POST',
+      data: JSON.stringify({ text: markdown, mode: "markdown" })
+    }).done(function(response) {
+      addHTML(response);
     });
-  };
-
-  $(document).ready(function(){
-    bindCreateButton();
   });
+};
+
+$(document).ready(function(){
+  bindCreateButton();
+});
 ```
 Here we are sending markdown to the GitHub API to render into HTML. Once we get a response it adds the HTML to `<div id="search_results">`.
 
-## Resources
-
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme' title='APIS'>APIS</a> on Learn.co and start learning to code for free.</p>
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme'>APIs and JSON </a> on Learn.co and start learning to code for free.</p>
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/js-apis-readme'>APIs and JSON </a> on Learn.co and start learning to code for free.</p>
