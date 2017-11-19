@@ -2,12 +2,12 @@ describe('JS APIs', function() {
   var user = { login: 'test' };
   var users = [user];
 
-  it('prints star gazers to console', function() {
-    spyOn(console, "log");
+  //it('prints star gazers to console', function() {
+  //  spyOn(console, "log");
 
-    printStargazers(users);
-    expect(console.log).toHaveBeenCalledWith(user.login + ' starred the Rails Repository');
-  });
+  //  printStargazers(users);
+  //  expect(console.log).toHaveBeenCalledWith(user.login + ' starred the Rails Repository');
+  //});
 
   it('calls stargazers GitHub API ', function() {
     spyOn($, "ajax").and.callFake(function(options) {
@@ -37,4 +37,3 @@ describe('JS APIs', function() {
   });
 
 });
-
