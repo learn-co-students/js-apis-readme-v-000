@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="3" errors="0" failures="0" time="0.008" timestamp="2016-02-24T16:42:37">
+		<testcase classname="JS APIs" name="prints star gazers to console" time="0.003">
+		</testcase>
+		<testcase classname="JS APIs" name="calls stargazers GitHub API " time="0">
+		</testcase>
+		<testcase classname="JS APIs" name="renders markdown using GitHub API " time="0.002">
+		</testcase>
+	</testsuite>
+</testsuites>
+
